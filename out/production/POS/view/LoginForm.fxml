@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="504.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="128.0" fitWidth="138.0" layoutX="211.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/img/user.png" />
+         </image>
+      </ImageView>
+      <JFXTextField layoutX="165.0" layoutY="235.0" prefHeight="34.0" prefWidth="230.0" />
+      <JFXButton layoutX="370.0" layoutY="388.0" prefHeight="34.0" prefWidth="83.0" style="-fx-background-color: #0693e3;" text="LogIn" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="165.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" wrappingWidth="83.20000000000005" />
+      <Text layoutX="165.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="83.20000000000005" />
+      <Separator layoutX="25.0" layoutY="459.0" prefHeight="1.0" prefWidth="500.0" style="-fx-background-color: #004dcf;" />
+      <Text layoutX="95.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyrights@2023 Allrights Reserved iCET - Institute of Computer Engineering Technology" textAlignment="CENTER" wrappingWidth="370.39995117187505" />
+      <Label layoutY="-2.0" prefHeight="34.0" prefWidth="562.0" style="-fx-background-color: #2de306;" />
+      <JFXPasswordField layoutX="166.0" layoutY="310.0" prefHeight="34.0" prefWidth="230.0" />
+   </children>
+</AnchorPane>
