@@ -27,6 +27,7 @@ import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -120,13 +121,13 @@ public class PlaceOrderFormController implements Initializable {
             JFXButton btn = new JFXButton("Delete");
             btn.setTextFill(Color.rgb(255,255,255));
             btn.setStyle("-fx-background-color: #e35c5c; -fx-font-weight: BOLD");
-
+            String unitPrice = lblUnitPrice.getText().replace(",",".");
             CartTm cartTm = new CartTm(
                     cmbItemCode.getValue().toString(),
                     txtDescription.getText(),
-                    Double.parseDouble(lblUnitPrice.getText()),
+                    Double.parseDouble(unitPrice),
                     Integer.parseInt(txtQty.getText()),
-                    Double.parseDouble(lblUnitPrice.getText())*Integer.parseInt(txtQty.getText()),
+                    Double.parseDouble(unitPrice)*Integer.parseInt(txtQty.getText()),
                     btn
             );
 

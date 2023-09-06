@@ -1,14 +1,18 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import db.DBConnection;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -20,10 +24,12 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.Order;
 import model.OrderDetails;
+import model.tm.ItemTm;
 import model.tm.OrderDetailsTm;
 import model.tm.OrderTm;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,8 +37,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
-public class OrderDetailsFormController {
+public class OrderDetailsFormController implements Initializable {
 
     public JFXTreeTableView<OrderTm> tblOrder;
     public TreeTableColumn colOrderId;
@@ -46,6 +54,7 @@ public class OrderDetailsFormController {
     public TreeTableColumn colDesc;
     public TreeTableColumn colQty;
     public TreeTableColumn colAmount;
+    public JFXTextField txtSearch;
 
 
     public void backButtonOnAction(ActionEvent actionEvent) {
@@ -181,5 +190,22 @@ public class OrderDetailsFormController {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        initialize();
+        txtSearch.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                tblOrder.setPredicate(new Predicate<TreeItem<OrderTm>>(){
+                    @Override
+                    public boolean test(TreeItem<OrderTm> orderTreeItem) {
+                        boolean flag = orderTreeItem.getValue().getId().contains(newValue);
+                        return flag;
+                    }
+                });
+            }
+        });
     }
 }

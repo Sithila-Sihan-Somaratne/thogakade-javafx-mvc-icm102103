@@ -20,24 +20,24 @@
             </font>
         </Label>
         <Separator layoutX="13.0" layoutY="573.0" prefHeight="8.0" prefWidth="777.0" style="-fx-background-color: #d9e3f0;" />
-        <JFXTreeTableView layoutX="21.0" layoutY="353.0" prefHeight="211.0" prefWidth="762.0">
+        <JFXTreeTableView fx:id="tblDetails" layoutX="21.0" layoutY="353.0" prefHeight="211.0" prefWidth="762.0">
             <columns>
-                <TreeTableColumn prefWidth="151.99996376037598" text="Item Code" />
-                <TreeTableColumn prefWidth="253.60003662109375" text="Description" />
-                <TreeTableColumn prefWidth="167.20004272460938" text="QTY" />
-                <TreeTableColumn prefWidth="190.4000244140625" text="Amount" />
+                <TreeTableColumn fx:id="colItemCode" prefWidth="151.99996376037598" text="Item Code" />
+                <TreeTableColumn fx:id="colDesc" prefWidth="253.60003662109375" text="Description" />
+                <TreeTableColumn fx:id="colQty" prefWidth="167.20004272460938" text="QTY" />
+                <TreeTableColumn fx:id="colAmount" prefWidth="190.4000244140625" text="Amount" />
             </columns>
         </JFXTreeTableView>
         <Text layoutX="271.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright © 2023 - iCET All Rights Reserved" wrappingWidth="239.73681640625" />
-        <JFXTextField layoutX="600.0" layoutY="92.0" prefHeight="26.0" prefWidth="182.0" promptText="Order ID" />
-      <JFXTreeTableView fx:id="tblOrder" layoutX="21.0" layoutY="127.0" prefHeight="211.0" prefWidth="762.0">
-         <columns>
-            <TreeTableColumn fx:id="colOrderId" prefWidth="170.39998817443848" text="Order ID" />
-            <TreeTableColumn fx:id="colDate" prefWidth="184.79998779296875" text="Date" />
-            <TreeTableColumn fx:id="colCustName" prefWidth="245.60006713867188" text="Customer Name" />
-            <TreeTableColumn fx:id="colOption" prefWidth="159.99997558593748" text="Option" />
-         </columns>
-      </JFXTreeTableView>
+        <JFXTextField fx:id="txtSearch" layoutX="600.0" layoutY="92.0" prefHeight="26.0" prefWidth="182.0" promptText="Order ID" />
+        <JFXTreeTableView fx:id="tblOrder" layoutX="21.0" layoutY="127.0" prefHeight="211.0" prefWidth="762.0">
+            <columns>
+                <TreeTableColumn fx:id="colOrderId" prefWidth="170.39998817443848" text="Order ID" />
+                <TreeTableColumn fx:id="colDate" prefWidth="184.79998779296875" text="Date" />
+                <TreeTableColumn fx:id="colCustName" prefWidth="245.60006713867188" text="Customer Name" />
+                <TreeTableColumn fx:id="colOption" prefWidth="159.99997558593748" text="Option" />
+            </columns>
+        </JFXTreeTableView>
         <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="73.0" onAction="#backButtonOnAction" prefHeight="37.0" prefWidth="44.0" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
