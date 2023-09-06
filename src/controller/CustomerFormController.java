@@ -18,7 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.Customer;
@@ -120,9 +119,7 @@ public class CustomerFormController implements Initializable {
             }else{
                 new Alert(Alert.AlertType.ERROR,"Something went wrong..!").show();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -151,9 +148,7 @@ public class CustomerFormController implements Initializable {
                 new Alert(Alert.AlertType.ERROR,"Something went wrong..!").show();
             }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
@@ -216,9 +211,8 @@ public class CustomerFormController implements Initializable {
 
             for (Customer customer:list) {
                 JFXButton btn = new JFXButton("Delete");
-                btn.setBackground(Background.fill(Color.rgb(227,92,92)));
                 btn.setTextFill(Color.rgb(255,255,255));
-                btn.setStyle("-fx-font-weight: BOLD");
+                btn.setStyle("-fx-background-color: #e35c5c; -fx-font-weight: BOLD");
 
                 btn.setOnAction(actionEvent -> {
                     try {
@@ -252,9 +246,7 @@ public class CustomerFormController implements Initializable {
             tblCustomer.setRoot(treeItem);
             tblCustomer.setShowRoot(false);
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -271,9 +263,7 @@ public class CustomerFormController implements Initializable {
             }else {
                 lblCustId.setText("C001");
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

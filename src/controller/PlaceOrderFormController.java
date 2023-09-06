@@ -16,20 +16,16 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import model.Customer;
 import model.Order;
 import model.OrderDetails;
 import model.tm.CartTm;
-import model.tm.CustomerTm;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -122,11 +118,8 @@ public class PlaceOrderFormController implements Initializable {
 
         if (!isExist){
             JFXButton btn = new JFXButton("Delete");
-            btn.setBackground(Background.fill(Color.rgb(227,92,92)));
             btn.setTextFill(Color.rgb(255,255,255));
-            btn.setStyle("-fx-font-weight: BOLD");
-
-
+            btn.setStyle("-fx-background-color: #e35c5c; -fx-font-weight: BOLD");
 
             CartTm cartTm = new CartTm(
                     cmbItemCode.getValue().toString(),
@@ -280,9 +273,7 @@ public class PlaceOrderFormController implements Initializable {
                 lblQtyOnHand.setText(resultSet.getString(4));
             }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -298,9 +289,7 @@ public class PlaceOrderFormController implements Initializable {
                 txtCustomerName.setText(resultSet.getString(1));
             }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -318,9 +307,7 @@ public class PlaceOrderFormController implements Initializable {
             }
 
             cmbItemCode.setItems(itemCodes);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -339,9 +326,7 @@ public class PlaceOrderFormController implements Initializable {
             }
 
             cmbCustomerId.setItems(customerIds);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
@@ -359,9 +344,7 @@ public class PlaceOrderFormController implements Initializable {
             }else {
                 lblOrderId.setText("D001");
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

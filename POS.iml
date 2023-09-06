@@ -12,4 +12,7 @@
     <orderEntry type="library" name="mysql-connector-java-8.0.11" level="project" />
     <orderEntry type="library" name="lombok" level="project" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="143855bd-a3a2-4740-9424-b347e938c7f1" />
+  </component>
 </module>

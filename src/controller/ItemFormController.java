@@ -20,17 +20,11 @@ import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import model.Customer;
 import model.Item;
-import model.tm.CustomerTm;
 import model.tm.ItemTm;
 
-import javax.swing.event.ChangeEvent;
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -130,9 +124,7 @@ public class ItemFormController implements Initializable {
             }else{
                 new Alert(Alert.AlertType.ERROR,"Something went wrong..!").show();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -156,9 +148,8 @@ public class ItemFormController implements Initializable {
 
             for (Item item:list) {
                 JFXButton btn = new JFXButton("Delete");
-                btn.setBackground(Background.fill(Color.rgb(227,92,92)));
                 btn.setTextFill(Color.rgb(255,255,255));
-                btn.setStyle("-fx-font-weight: BOLD");
+                btn.setStyle("-fx-background-color: #e35c5c; -fx-font-weight: BOLD");
 
 
                 btn.setOnAction(actionEvent -> {
@@ -193,9 +184,7 @@ public class ItemFormController implements Initializable {
             tblItem.setRoot(treeItem);
             tblItem.setShowRoot(false);
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -212,9 +201,7 @@ public class ItemFormController implements Initializable {
             }else {
                 lblCode.setText("P001");
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -244,9 +231,7 @@ public class ItemFormController implements Initializable {
                 new Alert(Alert.AlertType.ERROR,"Something went wrong..!").show();
             }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
