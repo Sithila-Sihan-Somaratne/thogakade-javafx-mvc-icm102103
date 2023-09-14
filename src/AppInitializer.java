@@ -22,11 +22,6 @@ public class AppInitializer extends Application { //javafx.application  // alt+e
     public void start(Stage stage) throws IOException {
         Arrays.toString(new int[10]);
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/DashBoard.fxml"))));
-        /*URL resource = getClass().getResource("view/DashBoard.fxml");
-        Parent load = FXMLLoader.load(resource);
-        Scene scene = new Scene(load);
-        stage.setScene(scene);*/
-
         stage.show();
     }
 }

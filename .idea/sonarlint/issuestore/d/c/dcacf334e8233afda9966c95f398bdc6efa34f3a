@@ -1,0 +1,27 @@
+
+k
+java:S2259ç"HA "NullPointerException" could be thrown; "connection" is nullable here.(Øîğ€ıÿÿÿÿ8øìúÛ¦1
+f
+java:S2259ä"HA "NullPointerException" could be thrown; "connection" is nullable here.(İÌï8øìúÛ¦1
+r
+java:S2095‹"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(İ™Öãúÿÿÿÿ8øìúÛ¦1
+r
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(×°Ùøÿÿÿÿ8øìúÛ¦1
+m
+java:S2095À"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ĞÿŸÓ8øìúÛ¦1
+m
+java:S2095Ó"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ã×™Ä8øìúÛ¦1
+m
+java:S2095­"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(± ä´8øìúÛ¦1
+m
+java:S2095È"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ªÏŸË8øìúÛ¦1
+r
+java:S2095À"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â—•Èûÿÿÿÿ8øìúÛ¦1
+¤
+java:S1186í"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(°Ëã³ùÿÿÿÿ8ùìúÛ¦1
+O
+java:S1602ÿ",Remove useless curly braces around statement(òóû¾üÿÿÿÿ8’íúÛ¦1
+O
+java:S1602ƒ",Remove useless curly braces around statement(Ğô³ˆşÿÿÿÿ8“íúÛ¦1
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8«ÚƒÜ¦1
